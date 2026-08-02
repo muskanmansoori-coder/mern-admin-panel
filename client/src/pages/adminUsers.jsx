@@ -12,7 +12,7 @@ export const AdminUsers =()=>{
     const  getAllUsersData = async() => {
         
 try {
-    const response=await fetch("http://localhost:3000/api/admin/users",{
+    const response=await fetch(`${import.meta.env.VITE_API_URL}/api/admin/users`,{
         method:"GET",
         headers:{
 Authorization:authToken,
@@ -36,7 +36,7 @@ Authorization:authToken,
     const deleteUser = async(id) => {
         try {
             console.log("deleteuser", id);
-            const response=await fetch(`http://localhost:3000/api/admin/users/delete/${id}`,{
+            const response=await fetch(`${import.meta.env.VITE_API_URL}/api/admin/users/delete/${id}`,{
                 method:"DELETE",
             headers:{
                 Authorization:authToken,

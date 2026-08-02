@@ -8,7 +8,7 @@ const[cont,setCont]=useState([]);
     const {authToken}=useAuth();
     const  getAdminContact = async() => {
         try {
-            const response=await fetch("http://localhost:3000/api/admin/contacts",{
+            const response=await fetch(`${import.meta.env.VITE_API_URL}/api/admin/contacts`,{
                 method:"GET",
                 headers:{
                     Authorization:authToken,
@@ -28,7 +28,7 @@ const[cont,setCont]=useState([]);
     const deleteAdminContact = async(id) => {
 console.log("admincontact",id);
 try {
-    const response=await fetch(`http://localhost:3000/api/admin/contact/delete/${id}`,{
+    const response=await fetch(`${import.meta.env.VITE_API_URL}/api/admin/contact/delete/${id}`,{
         method:"DELETE",
         headers:{
             Authorization:authToken,

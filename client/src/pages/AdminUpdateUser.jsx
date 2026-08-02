@@ -14,7 +14,7 @@ const {authToken}=useAuth();
     const getUpdatedUser = async() => {
         
        try {
-        const response=await fetch(`http://localhost:3000/api/admin/users/${params.id}`,{
+        const response=await fetch(`${import.meta.env.VITE_API_URL}/api/admin/users/${params.id}`,{
             method:"GET",
             headers:{
                 Authorization:authToken,
@@ -52,7 +52,7 @@ setData({
         e.preventDefault();
         console.log(data);
         try {
-            const response=await fetch(`http://localhost:3000/api/admin/users/update/${params.id}`,{
+            const response=await fetch(`${import.meta.env.VITE_API_URL}/api/admin/users/update/${params.id}`,{
                 method:"PATCH",
                 headers:{
                     Authorization:authToken,

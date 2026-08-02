@@ -26,7 +26,7 @@ return localStorage.removeItem("Token")
     const userAuthentication = async() => {
 try {
   setIsLoading(true)
-   const response = await fetch("http://localhost:3000/api/auth/user",{
+   const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/user`,{
     method:"GET",
     headers:{
         Authorization: authToken,
@@ -53,8 +53,8 @@ setUserr(user_data.message)
     // getserviceData
 
     const  getserviceData =async()=>{
-        try {
-          const response=await fetch("http://localhost:3000/api/data/service",{
+        try{
+          const response=await fetch(`${import.meta.env.VITE_API_URL}/api/data/service`,{
             method:"GET",
           }) 
           if(response.ok){
