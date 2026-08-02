@@ -40,13 +40,15 @@ try {
     setIsLoading(false)
  //console.log("user_data", user_data);
 setUserr(user_data.message)
-
- 
- 
+   }else{
+    setUserr(null);
    }
 } catch (error) {
     console.log("error fetching data");
+    setUserr(null);
     
+}finally {
+  setIsLoading(false);
 }
     }
 
