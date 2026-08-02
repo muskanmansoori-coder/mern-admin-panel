@@ -8,7 +8,7 @@ export const AdminLayout = () => {
     const{userr}=useAuth();
     const{isLoading}=useAuth();
    //console.log("adminuser",userr.isAdmin);
-   if(isLoading){
+   if(isLoading || userr === null){
     return<h1>Loading...</h1>
    }
    if(!userr.isAdmin){
